@@ -1,0 +1,47 @@
+{%extends 'restaurant/dashboardrestaurant.html'%}
+{% block body %}
+
+<body>
+<form action="{% url 'edit' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table" width="200" border="1">
+    <tr>
+      <th scope="col">Food category </th>
+      <th scope="col"><label>
+        <input type="text" name="textfield"  value="{{val.category}}"/>
+      </label></th>
+    </tr>
+    <tr>
+      <td>Food name </td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val.foodname}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><label>
+        <input type="file" name="file" /><img src="../media/{{val.image}}" width="100px" height="100px">
+      </label></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val.price}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{val.description}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="update" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

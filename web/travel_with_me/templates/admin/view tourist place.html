@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{%extends 'admin/dashboardadmin.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addtouristplace">
+  <h1><center>Tourist place</center></h1>
+  <br>
+  <table class="table" width="376" border="1">
+    <tr>
+      <th width="24" scope="col">Sl no. </th>
+      <th width="52" scope="col">Tourist place name </th>
+      <th width="42" scope="col">Image</th>
+      <th width="77" scope="col">Description</th>
+      <th width="58" scope="col">Location</th>
+      <th width="83" scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.place}}</td>
+      <td><img src="{{i.image.url}}" alt=""
+      style="width:100px;"/>
+      </td>
+      <td>{{i.description}}</td>
+      <td><a href="http://maps.google.com/maps?q={{i.latitude}},{{i.longitude}}">TRACK</a></td>
+      <td><a href="{% url 'edittp' id=i.id%}">edit</a>
+      <a href="{% url 'deletetp' id=i.id%}">delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

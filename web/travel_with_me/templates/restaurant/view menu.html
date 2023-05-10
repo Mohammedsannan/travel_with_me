@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{%extends 'restaurant/dashboardrestaurant.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addmenu" >
+  <h1 align="center">Menu</h1><BR>
+  <table class="table" width="362" border="1">
+    <tr>
+      <th width="62" scope="col">Sl no.</th>
+      <th width="62" scope="col">Category</th>
+      <th width="37" scope="col">Food name </th>
+      <th width="42" scope="col">Image</th>
+      <th width="34" scope="col">Price</th>
+      <th width="77" scope="col">Description</th>
+      <th width="70" scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.category}}</td>
+      <td>{{i.foodname}}</td>
+      <td><img src="{{i.image.url}}" width="100px" height="100px"> </td>
+      <td>{{i.price}}</td>
+      <td>{{i.description}}</td>
+      <td><a href="{% url 'editmenu'  id=i.id %}">edit</a>
+      <a href="{% url 'deletemenu'  id=i.id %}">delete</a></td>
+    </tr>
+        {% endfor %}
+
+    <tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

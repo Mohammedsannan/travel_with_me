@@ -1,0 +1,39 @@
+{%extends 'admin/dashboardadmin.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h1><center>Complaints</center></h1>
+  <br>
+  <table class="table" width="200" border="1">
+    <tr>
+      <th scope="col">Sl no. </th>
+      <th scope="col">User name </th>
+      <th scope="col">Complaint</th>
+      <th scope="col">Date</th>
+      <th scope="col">Reply</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.userid.fullname}}</td>
+      <td>{{i.complaint}}</td>
+      <td>{{i.date}}</td>
+      <td>
+
+        {% if i.reply == 'pending' %}<a href="{% url 'reply' id=i.id %}">reply</a>
+
+        {% else %}
+        replied
+
+        {% endif %}
+
+
+
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

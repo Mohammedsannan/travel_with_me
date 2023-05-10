@@ -1,0 +1,42 @@
+{%extends 'resort/dashboardresort.html'%}
+{% block body %}
+
+<body>
+<form action="{% url 'roomedit' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table" width="200" border="1">
+    <tr>
+      <th scope="col">Room no. </th>
+      <th scope="col"><label>
+        <input type="text" name="textfield" value="{{val.roomno}}"/>
+      </label></th>
+    </tr>
+    <tr>
+      <td><div align="center">Image</div></td>
+      <td><label>
+        <input type="file" name="file" /><img src="../media/{{val.image}}" width="100px" height="100px">
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">Type</div></td>
+      <td>
+        <input type="text" name="textfield2" value="{{val.type}}">
+      </td>
+    </tr>
+
+    <tr>
+      <td><div align="center">Amount</div></td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val.amount}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="update" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

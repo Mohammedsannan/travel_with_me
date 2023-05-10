@@ -1,0 +1,40 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{%extends 'admin/dashboardadmin.html'%}
+{% block body %}
+<body>
+<form action="{% url 'edittp_post' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table" width="200" border="1">
+    <tr>
+      <th width="97" height="100" scope="col">Tourist place </th>
+      <th width="87" scope="col"><label>
+        <input type="text" name="textfield" value="{{tp.place}}" />
+      </label></th>
+    </tr>
+    <tr>
+      <th height="100" scope="col">Image</th>
+      <th scope="col"><label>
+        <input type="file" name="file" />
+      </label></th>
+    </tr>
+    <tr>
+      <th height="100" scope="col">Description</th>
+      <th scope="col"><label>
+        <input type="text" name="textfield2"  value="{{tp.description}}"/>
+      </label></th>
+    </tr>
+
+    <tr>
+      <th height="100" colspan="2" scope="col"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

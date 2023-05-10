@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="User home" />
+        <item
+            android:id="@+id/restaurant"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="View restaurant" />
+        <item
+            android:id="@+id/resort"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="View resort" />
+        <item
+            android:id="@+id/touristplace"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="View tourist place" />
+        <item
+            android:id="@+id/recommended"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Recommendation" />
+        <item
+            android:id="@+id/complaints"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Complaints" />
+        <item
+            android:id="@+id/reply"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="View reply" />
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="App feedback" />
+        <item
+            android:id="@+id/place"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Manage place" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="LogOut" />
+    </group>
+</menu>
